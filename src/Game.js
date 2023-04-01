@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Board from './Board';
+
+import Typography from '@mui/material/Typography';
+// or
 import './Game.css';
 
 function Game() {
@@ -14,6 +17,11 @@ function Game() {
     squaresCopy[i] = xIsNext ? 'X' : 'O';
     setSquares(squaresCopy);
     setXIsNext(!xIsNext);
+  }
+
+  function resetGame() {
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
   }
 
   const calculateWinner = (squares) => {
