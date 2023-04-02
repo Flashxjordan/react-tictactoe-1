@@ -1,70 +1,85 @@
-/* CSS for the board */
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.board {
-  margin: 0 auto;
-  width: 80vw;
-  max-width: 400px;
-}
-
-.square {
-border-radius: 25px;
-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 125px;
-  height: 125px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.square.O {
-  color: #f00;
-}
-
-.square.X {
-  color: #00f;
-}
-
-.status {
+:root {
+    --mdc-theme-primary: #00bcd4; /* teal 500 */
+    --mdc-theme-secondary: #f48fb1; /* pink 200 */
+    --mdc-theme-background: #212121; /* grey 900 */
+    --mdc-theme-surface: #424242; /* grey 800 */
+    --mdc-theme-on-primary: #fff; /* white */
+    --mdc-theme-on-secondary: #212121; /* grey 900 */
+    --mdc-theme-on-background: #fff; /* white */
+    --mdc-theme-on-surface: #fff; /* white */
+  }
+  
+  body {
+    background-color: var(--mdc-theme-background);
+    color: var(--mdc-theme-on-background);
+  }
+  
+  /* CSS for the board */
+  .board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  
+  .board {
+    margin: 0 auto;
+    width: 80vw;
+    max-width: 400px;
+  }
+  
+  .square {
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background: var(--mdc-theme-surface);
+    border: 1px solid var(--mdc-theme-primary);
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 125px;
+    height: 125px;
+    color: var(--mdc-theme-primary);
+  }
+  
+  .square:focus {
+    outline: none;
+  }
+  
+  .square.O {
+    color: var(--mdc-theme-secondary);
+  }
+  
+  .square.X {
+    color: var(--mdc-theme-primary);
+  }
+  
+  .status {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
   }
-
+  
   .game {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 200px
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px
   }
   
   .game-board {
     width: 400px;
-  margin-right: 20px;
+    margin-right: 20px;
   }
-
+  
   .game-info {
     width: 200px;
-    
-
   }
-
+  
   @media only screen and (max-width: 600px) {
     .game {
       flex-direction: column;
@@ -76,3 +91,4 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
       max-width: 400px;
     }
   }
+  

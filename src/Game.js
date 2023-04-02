@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import Board from './Board';
 
-import Typography from '@mui/material/Typography';
-// or
 import './Game.css';
 
 function Game() {
@@ -55,14 +56,34 @@ function Game() {
   }
 
   return (
-    <div className="game">
-      <div className="game-board">
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Box sx={{ mb: 2 }} marginTop={10}>
+        <Typography variant="h4">Tic Tac Toe</Typography>
+      </Box>
+      <Box sx={{ mb: 2 }}>
+        <Typography variant="h5">{status}</Typography>
+      </Box>
+      <Box sx={{ mb: 2 }}>
         <Board squares={squares} onClick={handleClick} />
-      </div>
-      <div className="game-info">
-        <div className="status">{status}</div>
-      </div>
-    </div>
+      </Box>
+      <Box>
+        <Typography variant="h6" align="center" > Score Tracker </Typography>
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+  <Box sx={{ p: 2, border: '1px solid grey', borderRadius: '5px', mr: 2 }}>
+    <Typography variant="h6" align="center">Player X</Typography>
+    <Typography variant="h4" align="center">0</Typography>
+  </Box>
+  <Box sx={{ p: 2, border: '1px solid grey', borderRadius: '5px', ml: 2 }}>
+    <Typography variant="h6" align="center">Player O</Typography>
+    <Typography variant="h4" align="center">0</Typography>
+  </Box>
+</Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 2 }}>
+            <Button variant="contained" color="inherit" onClick={resetGame}>Reset</Button>
+            </Box>
+
+      </Box>
+    </Box>
   );
 }
 
